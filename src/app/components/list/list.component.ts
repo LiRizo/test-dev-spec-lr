@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 import { ListdataService } from 'src/app/services/listdata.service';
 
 @Component({
@@ -21,31 +22,31 @@ export class ListComponent implements OnInit {
   public indexoption: number = 0;
   public selectlist: any[] = [];
 
-  displayedColumns: string[] = ['id', 'name', 'description', 'price'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
 
 
   constructor(public listService: ListdataService) {
-  listService.getList().subscribe(
-    (data) => {
-      this.option = data;
-      console.log(data);
-      this.getList(this.indexoption);
+    listService.getList().subscribe(
+      (data) => {
+        this.option = data['data'];
+        console.log(data);
+        this.getList(this.indexoption);
 
-    },
-    (err) => {
-      console.log(err);
-    }
-  );
-}
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 
-ngOnInit(): void {
+  ngOnInit(): void {
 
-}
-getList(index: number) {
-  this.lists = this.option[index]['data'];
-  this.indexoption = index;
-  console.log();
-}
+  }
+  getList(index: number) {
+    this.lists = this.option[index]['data'];
+    this.indexoption = index;
+    console.log();
+  }
 
 }

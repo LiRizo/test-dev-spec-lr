@@ -35,10 +35,12 @@ export class ListdataService {
     return this.httpClient.get(this.urlListJson).pipe(map(this.extractData), catchError(this.handleError));
   }
 
- /* pruebas
-  getTable() {
-    const path = `${this.urlListJson}/products/${2}`;
+/* pruebas
+  getTable(id: string) {
+    const path = `${this.urlListJson}/products/${id}`;
   return this.httpClient.get<Table>(path);
-} */
+}*/
+
+
 
 }
