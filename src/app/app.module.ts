@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListComponent } from './components/list/list.component';
 import { DetailsComponent } from './components/details/details.component';
+import { LoginComponent } from './components/login/login.component';
 
 /*Styles imports */
 import { MatSliderModule } from '@angular/material/slider';
@@ -20,10 +21,11 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './components/login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+/* import {OverlayContainer} from '@angular/cdk/overlay';
+ */import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 /* data*/
 import { HttpClientModule } from '@angular/common/http';
@@ -53,6 +55,7 @@ import { ListdataService } from './services/listdata.service';
     MatInputModule,
     MatCardModule,
     MatTableModule,
+    /* OverlayContainer, */
     BrowserAnimationsModule,
     HttpClientModule
   ],

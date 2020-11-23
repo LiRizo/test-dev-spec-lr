@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
 import { ListdataService } from 'src/app/services/listdata.service';
 
 @Component({
@@ -9,44 +8,32 @@ import { ListdataService } from 'src/app/services/listdata.service';
 })
 export class ListComponent implements OnInit {
 
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  discount_amount: number;
-  status: string;
-  categories: any[];
-
-  public option: any[] = [];
-  public lists: any[] = [];
-  public indexoption: number = 0;
-  public selectlist: any[] = [];
-
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
 
+  public lists: Array<any> = [];
+
+  columndefs : any[] = [
+   'id: number',
+   'name: string',
+   'description: string',
+   'price: number',
+   'discount_amount: number',
+   'status: string',
+   'categories: any[]',
+  ];
 
   constructor(public listService: ListdataService) {
-    listService.getList().subscribe(
-      (data) => {
-        this.option = data['data'];
-        console.log(data);
-        this.getList(this.indexoption);
-
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    this.listService.getList().subscribe((data: any) =>{
+      console.log("see all",data);
+      this.lists = data[1];
+      console.log('id in specific',data['data'][5]);
+    },
+    (error) => console.log(error),
+    )
   }
 
   ngOnInit(): void {
+  }
 
-  }
-  getList(index: number) {
-    this.lists = this.option[index]['data'];
-    this.indexoption = index;
-    console.log();
-  }
 
 }
