@@ -14,7 +14,6 @@ import { LoginComponent } from './components/login/login.component';
 /*Styles imports */
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
-/* import {MatToolbarHarness} from '@angular/material/toolbar/testing'; */
 import {MatIconModule} from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,14 +22,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
-/* import {OverlayContainer} from '@angular/cdk/overlay';
- */import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 /* data*/
 import { HttpClientModule } from '@angular/common/http';
 import { ListdataService } from './services/listdata.service';
-
 
 @NgModule({
   declarations: [
@@ -46,7 +44,6 @@ import { ListdataService } from './services/listdata.service';
     AppRoutingModule,
     MatToolbarModule,
     MatSliderModule,
-    /* MatToolbarHarness, */
     MatIconModule,
     MatListModule,
     MatButtonModule,
@@ -55,7 +52,7 @@ import { ListdataService } from './services/listdata.service';
     MatInputModule,
     MatCardModule,
     MatTableModule,
-    /* OverlayContainer, */
+    MatPaginatorModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
