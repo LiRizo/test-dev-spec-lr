@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* data*/
 import { HttpClientModule } from '@angular/common/http';
+
 import { ListdataService } from './services/listdata.service';
 
 @NgModule({
